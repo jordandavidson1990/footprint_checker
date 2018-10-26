@@ -5,7 +5,7 @@ const QuestionView = function(container){
 };
 
 QuestionView.prototype.render = function (question){
-  debugger
+  // debugger
   const questionContainer = document.createElement('div');
 
   const questionStatement = document.createElement('p');
@@ -14,18 +14,18 @@ QuestionView.prototype.render = function (question){
   questionContainer.appendChild(questionStatement);
 
   question.options.forEach((option) => {
-    debugger
+    // debugger
     const questionOptions = document.createElement('input');
     questionOptions.type = 'radio';
     questionOptions.name = 'options';
     questionOptions.value = option;
     questionOptions.id = option;
 
-    debugger
+    // debugger
     const optionLabel = document.createElement('label');
     optionLabel.textContent = option;
     optionLabel.for = option;
-    debugger
+    // debugger
     questionContainer.appendChild(optionLabel);
     questionContainer.appendChild(questionOptions);
   })

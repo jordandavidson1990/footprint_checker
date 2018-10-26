@@ -16,7 +16,7 @@ FormWrapperView.prototype.bindEvents = function(){
 FormWrapperView.prototype.render = function(questionsCollection){
   // debugger;
     const categoryView = new CategoryView(this.container);
-    questionsCollection.forEach((category) => categoryView.render(category.category1))
+    questionsCollection.forEach((category) => categoryView.render(category.questions))
 };
 
 module.exports = FormWrapperView;
