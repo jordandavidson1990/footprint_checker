@@ -21,6 +21,10 @@ MongoClient.connect('mongodb://localhost:27017')
   const usersCollection = db.collection('users');
   const usersRouter = createRouter(usersCollection);
   app.use('/api/users', usersRouter);
+
+  const questionsCollection = db.collection('questions');
+  const questionsRouter = createRouter(questionsCollection);
+  app.use('/api/questions', questionsRouter);
 })
 .catch(console.err);
 

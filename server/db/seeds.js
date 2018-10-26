@@ -93,3 +93,25 @@ db.users.insertOne(
     }
   }
 )
+
+db.questions.insertMany(
+  [
+    {
+      category1:
+      [
+        {
+          statement: "How many air miles have you covered in a year?",
+          options: ["Upto 1000 miles", "Upto 2000 miles", "Upto 3000"]
+        },
+        {
+          statement: "What class do you normally fly?",
+          options: ["Ecomony", "Business", "First"]
+        },
+        {
+          statement: "How far are your normal flights?",
+          options: ["Short-haul", "Long-haul"]
+        }
+      ]
+    }
+  ]
+  );
