@@ -10,7 +10,7 @@ db.carbonFootprints.insertMany([
         {
           short_haul: 0.096,
           long_haul: 0.08
-        } ,
+        },
         business:
         {
           short_haul: 0.126,
@@ -57,39 +57,39 @@ db.carbonFootprints.insertMany([
   },
   {
     emitter: "Home",
-    factors:{
+    factors: {
       heating_type:{
         central: {
           detached: 4800,
           semi_detached: 3200,
           terrace: 2200,
           flat: 1600
-        }
+        },
         per_room: 800,
       }
     }
   }
 ]);
 
-db.users.insertOne([
+db.users.insertOne(
   {
     diet:{
-      type:,
-      source:
+      type: 1,
+      source: 1
     },
     air_travel:{
-      distance:,
-      duration:,
-      class:
+      distance: 1,
+      duration: 1,
+      class: 1
     },
     transport:{
-      fuel_type:,
-      transport_type:
+      fuel_type: 1,
+      transport_type: 1
     },
     home:{
-      building_type:,
-      number_of_bedrooms:,
-      heating_type:
+      building_type: 1,
+      number_of_bedrooms: 1,
+      heating_type:1
     }
   }
-])
+)
