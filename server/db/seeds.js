@@ -115,7 +115,7 @@ db.questions.insertMany(
       ]
     },
     {
-      category: "Air Travel",
+      category: "Diet",
       questions:
       [
         {
