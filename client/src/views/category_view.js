@@ -13,7 +13,7 @@ CategoryView.prototype.render = function (category, categoryIndex, categoryTopic
   // debugger
   category.forEach((question) => questionView.render(question, categoryIndex, categoryTopic, category.findIndex(q => q.statement === question.statement)+1, numberOfQuestions))
 
-  categoryDiv.appendChild(questionView)
+  // categoryDiv.appendChild(questionView)
 };
 
 module.exports = CategoryView;

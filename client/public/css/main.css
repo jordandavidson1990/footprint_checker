@@ -1,5 +1,53 @@
 body{
   background-color: #63768D;
   color: #36213E;
-  font-family: sans-serif;
+  font-family: "Palatino Linotype" sans-serif;
+  background-image: url(./images/trees.jpg);
 }
+
+p{
+  color: #B8F3FF;
+}
+
+.footprint-header{
+  /* background: #8AC6D0; */
+  color:#B8F3FF;
+  font-weight: bold;
+  position: relative;
+  box-shadow: 0 1px 3px 1px #63768D;
+  display: block;
+  text-align: center;
+  text-decoration: underline;
+  width:100%;
+  height:auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.title{
+  text-align: center;
+  background-color: inherit;
+  border: 2px solid #8AC6D0;
+  border-radius: 5px;
+  width: 80%;
+  margin:0 auto;
+  margin-bottom: 20px;
+}
+
+.container{
+  width: 80%;
+  height:auto;
+  margin:0 auto;
+  padding: 10px;
+  border: 2px solid #8AC6D0;
+  border-radius: 5px;
+  background-color: #63768D;
+}
+.tree{
+  background-image: url(./images/trees.jpg);
+  border-radius: 50px
+}
+
+/* .full-container{
+  margin: 0 auto;
+  width:auto;
+} */
