@@ -3,6 +3,7 @@ const Questions = require('./models/questions.js')
 
 document.addEventListener('DOMContentLoaded', () => {
 
+console.log("working");
   const formWrapper = document.querySelector('#wrapper');
   const formWrapperView = new FormWrapperView(formWrapper);
   formWrapperView.bindEvents();

@@ -119,16 +119,40 @@ db.questions.insertMany(
       questions:
       [
         {
-          statement: "How many air miles have you covered in a year?",
-          options: ["Upto 1000 miles", "Upto 2000 miles", "Upto 3000", "Upto 4000 miles"]
+          statement: "What type of diet would you consider yourself?",
+          options: ["Eats Meat with most meals", "Occaisional Meat eater", "Vegetarian", "Vegan"]
         },
         {
-          statement: "What class do you normally fly?",
-          options: ["Ecomony", "Business", "First"]
+          statement: "Where does your food come from?",
+          options: ["Locally Sourced", "Globally Sourced"]
+        }
+      ]
+    },
+    {
+      category: "Transport",
+      questions:
+      [
+        {
+          statement: "What is your main type of transport?",
+          options: ["Petrol Car", "Diesel Car", "Train", "Bus", "Underground Train", "Cycle", "Walk"]
         },
         {
-          statement: "How far are your normal flights?",
-          options: ["Short-haul", "Long-haul"]
+          statement: "How many miles do you use in a year?",
+          options: ["Less than 10,000", "Between 10,000 & 15,000", "More Than 10,000"]
+        }
+      ]
+    },
+    {
+      category: "Home",
+      questions:
+      [
+        {
+          statement: "What kind of home do you have?",
+          options: ["Detached", "Semi-Detatched", "Flat", "Terrace"]
+        },
+        {
+          statement: "What is your Heating Source?",
+          options: ["Central Heating", "Heat Per Room"]
         }
       ]
     }
