@@ -5,32 +5,47 @@ body{
   background-image: url(./images/trees.jpg);
 }
 
+div.earth-img{
+width:80%;
+height:auto;
+margin:auto;
+margin-bottom: 5px;
+border: 2px solid #8AC6D0;
+border-radius: 50%;
+  content:url(./images/earth2.jpg);
+  opacity: 0.7;
+}
+
 p{
   color: #B8F3FF;
+  /* text-align: center; */
 }
 
 .footprint-header{
   /* background: #8AC6D0; */
-  color:#B8F3FF;
+  color:#36213E;
   font-weight: bold;
   position: relative;
   box-shadow: 0 1px 3px 1px #63768D;
   display: block;
   text-align: center;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   width:100%;
   height:auto;
   border-radius: 5px;
   margin-bottom: 10px;
+  opacity: 0.8;
 }
 .title{
   text-align: center;
   background-color: inherit;
   border: 2px solid #8AC6D0;
   border-radius: 5px;
-  width: 80%;
+  width: 85%;
   margin:0 auto;
   margin-bottom: 20px;
+  background-image: url(./images/ocean.jpg);
+  opacity: 0.8;
 }
 
 .container{
@@ -41,9 +56,10 @@ p{
   border: 2px solid #8AC6D0;
   border-radius: 5px;
   background-color: #63768D;
+  opacity: 0.95;
 }
-.tree{
-  background-image: url(./images/trees.jpg);
+.ocean{
+  background-image: url(./images/ocean.jpg);
   border-radius: 50px
 }
 
