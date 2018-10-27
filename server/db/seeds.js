@@ -44,16 +44,16 @@ db.carbonFootprints.insertMany([
     factors: {
       type_by_miles: {
         car:{
-          petrol: 0.415
-        } ,
-        diesel: 0.38,
-      },
-      bus: 0.09,
-      train: 0.09,
-      underground_train: 0.05,
-      cycle: 0,
-      walk: 0
-    },
+          petrol: 0.415,
+          diesel: 0.38,
+        },
+        bus: 0.09,
+        train: 0.09,
+        underground_train: 0.05,
+        cycle: 0,
+        walk: 0
+      }
+    }
   },
   {
     emitter: "Home",

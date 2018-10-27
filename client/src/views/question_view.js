@@ -3,9 +3,9 @@ const PubSub = require('../helpers/pub_sub.js');
 const QuestionView = function(container){
   this.container = container;
 };
-
-QuestionView.prototype.render = function (question, categoryIndex, questionIndex){
-  debugger
+let userInput = {};
+QuestionView.prototype.render = function (question, categoryIndex, categoryTopic, questionIndex){
+  // debugger
   const questionContainer = document.createElement('div');
 
   const questionStatement = document.createElement('p');
@@ -22,6 +22,16 @@ QuestionView.prototype.render = function (question, categoryIndex, questionIndex
     questionOptions.value = option;
     questionOptions.id = option;
 
+    questionOptions.addEventListener('change', (evt) => {
+
+      userInput[`C${categoryIndex}`] = categoryTopic;
+      // userInput[questionIndex] ={}
+      userInput[`C${categoryIndex}Q${questionIndex}`] = evt.target.value;
+      console.log(userInput);
+      PubSub.publish('QuestionView:option-selected', userInput)
+      // debugger;
+    });
+
     // debugger
     const optionLabel = document.createElement('label');
     optionLabel.textContent = option;
@@ -30,9 +40,9 @@ QuestionView.prototype.render = function (question, categoryIndex, questionIndex
     questionContainer.appendChild(optionLabel);
     questionContainer.appendChild(questionOptions);
   })
-
 this.container.appendChild(questionContainer);
-
 };
+
+
 
 module.exports = QuestionView;

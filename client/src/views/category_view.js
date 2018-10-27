@@ -5,10 +5,10 @@ const CategoryView = function (container) {
   this.container = container;
 };
 
-CategoryView.prototype.render = function (category, categoryIndex) {
+CategoryView.prototype.render = function (category, categoryIndex, categoryTopic) {
   const questionView = new QuestionView(this.container);
-  debugger
-  category.forEach((question) => questionView.render(question, categoryIndex, category.findIndex(q => q.statement === question.statement)+1))
+  // debugger
+  category.forEach((question) => questionView.render(question, categoryIndex, categoryTopic, category.findIndex(q => q.statement === question.statement)+1))
 };
 
 module.exports = CategoryView;
