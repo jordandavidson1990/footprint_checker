@@ -24,7 +24,8 @@ Questions.prototype.getData = function(){
 };
 
 Questions.prototype.calculateFootprint = function(userInput) {
-  console.log(userInput);
+  // console.log(userInput);
+
 }
 
 module.exports = Questions;

@@ -5,22 +5,20 @@ db.carbonFootprints.insertMany([
   {
     emitter: "Air Travel",
     factors:{
-      class_by_mile:{
-        economy:
-        {
-          short_haul: 0.096,
-          long_haul: 0.08
-        },
-        business:
-        {
-          short_haul: 0.126,
-          long_haul: 0.154
-        },
-        first:
-        {
-          short_haul: 0.24,
-          long_haul: 0.24
-        }
+      economy:
+      {
+        short_haul: 0.096,
+        long_haul: 0.08
+      },
+      business:
+      {
+        short_haul: 0.126,
+        long_haul: 0.154
+      },
+      first:
+      {
+        short_haul: 0.24,
+        long_haul: 0.24
       }
     }
   },
