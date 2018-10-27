@@ -10,5 +10,6 @@ console.log("working");
 
   const questions = new Questions();
   questions.getData();
+  questions.bindEvents();
 
 })

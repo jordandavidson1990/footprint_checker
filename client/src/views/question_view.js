@@ -23,11 +23,9 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
     questionOptions.id = option;
 
     questionOptions.addEventListener('change', (evt) => {
-
       userInput[`C${categoryIndex}`] = categoryTopic;
-      // userInput[questionIndex] ={}
       userInput[`C${categoryIndex}Q${questionIndex}`] = evt.target.value;
-      console.log(userInput);
+      // console.log(userInput);
       PubSub.publish('QuestionView:option-selected', userInput)
       // debugger;
     });
@@ -40,9 +38,6 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
     questionContainer.appendChild(optionLabel);
     questionContainer.appendChild(questionOptions);
   })
-this.container.appendChild(questionContainer);
+  this.container.appendChild(questionContainer);
 };
-
-
-
 module.exports = QuestionView;
