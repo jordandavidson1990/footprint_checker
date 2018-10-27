@@ -16,11 +16,15 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
   question.options.forEach((option) => {
     // debugger
 
+    const optionDiv = document.createElement('div');
+
     const questionOptions = document.createElement('input');
     questionOptions.type = 'radio';
     questionOptions.name = `C${categoryIndex}Q${questionIndex}options`;
     questionOptions.value = option.value || option;
     questionOptions.id = option.value || option;
+
+
 
     questionOptions.addEventListener('change', (evt) => {
       userInput[`C${categoryIndex}`] = categoryTopic;
@@ -37,8 +41,11 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
     optionLabel.textContent = option.text || option;
     optionLabel.for = option.value || option;
     // debugger
-    questionContainer.appendChild(optionLabel);
-    questionContainer.appendChild(questionOptions);
+    optionDiv.appendChild(questionOptions);
+    optionDiv.appendChild(optionLabel);
+    questionContainer.appendChild(optionDiv);
+    // questionContainer.appendChild(optionLabel);
+    // questionContainer.appendChild(questionOptions);
   })
   this.container.appendChild(questionContainer);
 };

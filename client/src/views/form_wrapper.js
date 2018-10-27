@@ -15,6 +15,10 @@ FormWrapperView.prototype.bindEvents = function(){
 
 FormWrapperView.prototype.render = function(questionsCollection){
   debugger;
+
+  const wrapperDiv = document.createElement('nav')
+
+
     const categoryView = new CategoryView(this.container);
     questionsCollection.forEach((topic) =>
     {
