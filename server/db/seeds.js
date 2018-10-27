@@ -100,7 +100,15 @@ db.questions.insertMany(
       [
         {
           statement: "How many air miles have you covered in a year?",
-          options: ["Upto 1000 miles", "Upto 2000 miles", "Upto 3000"]
+          options: [{value: 1000,
+                      text: "Upto 1000 miles"
+                      },
+                      {value: 2000,
+                      text: "Upto 2000 miles"
+                      },
+                      {value: 3000,
+                      text: "Upto 3000 miles"
+                    }]
         },
         {
           statement: "What class do you normally fly?",

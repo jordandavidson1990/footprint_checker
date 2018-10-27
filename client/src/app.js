@@ -1,3 +1,4 @@
+const CarbonFootprints = require('./models/carbon_footprint_data.js');
 const FormWrapperView = require('./views/form_wrapper.js')
 const Questions = require('./models/questions.js')
 
@@ -8,8 +9,12 @@ console.log("working");
   const formWrapperView = new FormWrapperView(formWrapper);
   formWrapperView.bindEvents();
 
+  const carbonFootprints = new CarbonFootprints();
+  carbonFootprints.getData();
+  carbonFootprints.bindEvents();
+
   const questions = new Questions();
   questions.getData();
-  questions.bindEvents();
+  // questions.bindEvents();
 
 })

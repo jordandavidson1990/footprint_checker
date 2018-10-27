@@ -14,9 +14,13 @@ FormWrapperView.prototype.bindEvents = function(){
 };
 
 FormWrapperView.prototype.render = function(questionsCollection){
-  // debugger;
+  debugger;
     const categoryView = new CategoryView(this.container);
-    questionsCollection.forEach((topic) => categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category))
+    questionsCollection.forEach((topic) =>
+    {
+      debugger;
+      categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length)
+    })
     // debugger
 };
 

@@ -6,11 +6,11 @@ const Questions = function(url){
   this.request = new Request(this.url);
 };
 
-Questions.prototype.bindEvents = function(){
-    PubSub.subscribe('QuestionView:option-selected', (evt) => {
-      this.calculateFootprint(evt.detail)
-    })
-}
+// Questions.prototype.bindEvents = function(){
+//     // PubSub.subscribe('QuestionView:option-selected', (evt) => {
+//     //   this.calculateFootprint(evt.detail)
+//     // })
+// }
 
 Questions.prototype.getData = function(){
   // debugger;
@@ -23,9 +23,9 @@ Questions.prototype.getData = function(){
   .catch(console.err);
 };
 
-Questions.prototype.calculateFootprint = function(userInput) {
-  // console.log(userInput);
-
-}
+// Questions.prototype.calculateFootprint = function(userInput) {
+//   // console.log(userInput);
+//
+// }
 
 module.exports = Questions;
