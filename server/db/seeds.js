@@ -40,17 +40,13 @@ db.carbonFootprints.insertMany([
   {
     emitter: "Transport",
     factors: {
-      type_by_miles: {
-        car:{
-          petrol: 0.415,
-          diesel: 0.38,
-        },
+        petrol_car: 0.415,
+        diesel_car: 0.38,
         bus: 0.09,
         train: 0.09,
         underground_train: 0.05,
         cycle: 0,
         walk: 0
-      }
     }
   },
   {
@@ -153,11 +149,29 @@ db.questions.insertMany(
       [
         {
           statement: "What is your main type of transport?",
-          options: ["Petrol Car", "Diesel Car", "Train", "Bus", "Underground Train", "Cycle", "Walk"]
+          options: [{value: "petrol_car",
+                    text: "Petrol Car"},
+                    {value: "diesel_car",
+                    text: "Diesel Car"},
+                    {value: "train",
+                    text: "Train"},
+                    {value: "bus",
+                    text: "Bus"},
+                    {value: "underground_train",
+                    text: "Underground Train"},
+                    {value: "cycle",
+                    text: "Cycle"},
+                    {value: "walk",
+                    text: "Walk"}]
         },
         {
           statement: "How many miles do you use in a year?",
-          options: ["Less than 10,000", "Between 10,000 & 15,000", "More Than 10,000"]
+          options: [{value: 10000,
+                    text: "Less than 10,000"},
+                    {value: 15000,
+                    text: "Between 10,000 & 15,000"},
+                    {value: 20000,
+                    text: "More Than 15,000"}]
         }
       ]
     },
@@ -167,11 +181,21 @@ db.questions.insertMany(
       [
         {
           statement: "What kind of home do you have?",
-          options: ["Detached", "Semi-Detatched", "Flat", "Terrace"]
+          options: [{value: "detached",
+                    text: "Detached"},
+                    {value: "semi_detached",
+                    text: "Semi-Detatched"},
+                    {value: "flat",
+                    text: "Flat"},
+                    {value: "terrace",
+                    text: "Terrace"}]
         },
         {
           statement: "What is your Heating Source?",
-          options: ["Central Heating", "Heat Per Room"]
+          options: [{value: "central",
+                    text: "Central Heating"},
+                    {value: "per_room",
+                    text: "Heat Per Room"}]
         }
       ]
     }

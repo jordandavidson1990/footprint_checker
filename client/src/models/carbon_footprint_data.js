@@ -79,7 +79,9 @@ CarbonFootprints.prototype.calculateDietFootprint = function (userInputDiet) {
 };
 
 CarbonFootprints.prototype.calculateTransportFootprint = function (userInputTransport) {
-  return 1;
+  const transportTypeFactor = this.carbonFootprintsCollection[2].factors[userInputTransport.Q1];
+  const result = userInputTransport.Q2 * transportTypeFactor;
+  return result;
 };
 
 CarbonFootprints.prototype.calculateHomeFootprint = function (userInputHome) {
