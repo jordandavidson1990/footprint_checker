@@ -196,6 +196,10 @@ db.questions.insertMany(
                     text: "Central Heating"},
                     {value: "per_room",
                     text: "Heat Per Room"}]
+        },
+        {
+          statement: "How many rooms do you have?",
+          options: [1, 2, 3, 4, 5]
         }
       ]
     }

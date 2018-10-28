@@ -19,7 +19,8 @@ CarbonFootprints.prototype.getData = function () {
 
 CarbonFootprints.prototype.bindEvents = function () {
   PubSub.subscribe('QuestionView:option-selected', (evt) => {
-    const totalCarbonFootPrints = this.calculateFootprint(evt.detail)
+    const totalCarbonFootPrints = this.calculateFootprint(evt.detail);
+    console.log("totalCarbonFootPrints",totalCarbonFootPrints);
   })
 };
 
@@ -85,7 +86,15 @@ CarbonFootprints.prototype.calculateTransportFootprint = function (userInputTran
 };
 
 CarbonFootprints.prototype.calculateHomeFootprint = function (userInputHome) {
-  return 1;
+  let result;
+  if(userInputHome.Q2 === "central"){
+    result = this.carbonFootprintsCollection[3].factors.heating_type[userInputHome.Q2][userInputHome.Q1];
+  }
+  else{
+    const heatingFactor = this.carbonFootprintsCollection[3].factors.heating_type[userInputHome.Q2];
+    result = userInputHome.Q3 * heatingFactor;
+  }
+  return result;
 };
 
 module.exports = CarbonFootprints;
