@@ -14,7 +14,7 @@ FormWrapperView.prototype.bindEvents = function(){
 };
 
 FormWrapperView.prototype.render = function(questionsCollection){
-  debugger;
+  // debugger;
 
   const wrapperDiv = document.createElement('nav')
 
@@ -22,7 +22,7 @@ FormWrapperView.prototype.render = function(questionsCollection){
     const categoryView = new CategoryView(this.container);
     questionsCollection.forEach((topic) =>
     {
-      debugger;
+      // debugger;
       categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length)
     })
     // debugger

@@ -16,6 +16,7 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
   question.options.forEach((option) => {
     // debugger
 
+
     const optionDiv = document.createElement('div');
 
     const questionOptions = document.createElement('input');
@@ -25,15 +26,26 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
     questionOptions.id = option.value || option;
 
 
+    //being tested
+    userInput[categoryTopic] = {};
 
     questionOptions.addEventListener('change', (evt) => {
-      userInput[`C${categoryIndex}`] = categoryTopic;
-      userInput[`C${categoryIndex}Q${questionIndex}`] = evt.target.value;
+      // userInput[`C${categoryIndex}`] = categoryTopic;
+      // userInput[`C${categoryIndex}Q${questionIndex}`] = evt.target.value;
+      // console.log(numberOfQuestions);
+      // if (questionIndex === numberOfQuestions){
+      //   PubSub.publish('QuestionView:option-selected', userInput)
+      // }
+      // debugger;
+
+      // debugger;
+      userInput[categoryTopic][`Q${questionIndex}`] = evt.target.value;
       console.log(numberOfQuestions);
       if (questionIndex === numberOfQuestions){
         PubSub.publish('QuestionView:option-selected', userInput)
+        // debugger;
       }
-      // debugger;
+
     });
 
     // debugger

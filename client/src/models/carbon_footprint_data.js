@@ -26,22 +26,29 @@ CarbonFootprints.prototype.bindEvents = function () {
 CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   // console.log(userInput);
   let result;
-  debugger;
-  if(userInput["C1"] === "Air Travel"){
+  // debugger;
+  // if(userInput["C1"] === "Air Travel"){  //re-check as this condition would always be true
+  //   result = this.calculateFootprintForAirTravel(userInput);
+  // }
+
+  if(Object.keys(userInput)[0] === "Air Travel"){  //re-check as this condition would always be true
     result = this.calculateFootprintForAirTravel(userInput);
   }
   return result;
 };
 
 CarbonFootprints.prototype.calculateFootprintForAirTravel = function (userInput) {
-  debugger;
-  const airTravelCollection = this.carbonFootprintsCollection[0];
-  const travelClass = userInput.C1Q2.toLowerCase();
-  const travelDuration = userInput.C1Q3.toLowerCase();
-  const classFactor = airTravelCollection.factors;
-  const travelFactor = classFactor[travelClass];
-  const factor = travelFactor[travelDuration];
-  const result = factor * userInput.C1Q1;
+  // debugger;
+  // const airTravelCollection = this.carbonFootprintsCollection[0];
+  // const travelClass = userInput.C1Q2.toLowerCase();
+  // const travelDuration = userInput.C1Q3.toLowerCase();
+  // const classFactor = airTravelCollection.factors;
+  // const travelFactor = classFactor[travelClass];
+  // const factor = travelFactor[travelDuration];
+  // const result = factor * userInput.C1Q1;
+
+  const factor = this.carbonFootprintsCollection[0].factors[userInput["Air Travel"].Q2.toLowerCase()][userInput["Air Travel"].Q3.toLowerCase()];
+  const result = factor * userInput["Air Travel"].Q1;
   return result;
 };
 
