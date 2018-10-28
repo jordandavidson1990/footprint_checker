@@ -25,10 +25,12 @@ CarbonFootprints.prototype.bindEvents = function () {
 
 CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   // console.log(userInput);
-  // debugger;
-  // if(userInput.C1 === "Air Travel")
-    const result = this.calculateFootprintForAirTravel(userInput);
-    return result;
+  let result;
+  debugger;
+  if(userInput["C1"] === "Air Travel"){
+    result = this.calculateFootprintForAirTravel(userInput);
+  }
+  return result;
 };
 
 CarbonFootprints.prototype.calculateFootprintForAirTravel = function (userInput) {
