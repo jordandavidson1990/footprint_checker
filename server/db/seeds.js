@@ -112,11 +112,14 @@ db.questions.insertMany(
         },
         {
           statement: "What class do you normally fly?",
-          options: ["Ecomony", "Business", "First"]
+          options: ["Economy", "Business", "First"]
         },
         {
           statement: "How far are your normal flights?",
-          options: ["Short-haul", "Long-haul"]
+          options: [{value: "short_haul",
+                    text: "Short-haul"},
+                    {value: "long_haul",
+                    text: "Long-haul"}]
         }
       ]
     },
