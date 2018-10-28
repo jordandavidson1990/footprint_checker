@@ -38,12 +38,13 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
       // }
       // debugger;
 
-      // debugger;
+      debugger;
       userInput[categoryTopic][`Q${questionIndex}`] = evt.target.value;
       console.log(numberOfQuestions);
       if (questionIndex === numberOfQuestions){
+        // const userInputWithCategory = {}
         PubSub.publish('QuestionView:option-selected', userInput)
-        // debugger;
+        debugger;
       }
 
     });
