@@ -129,11 +129,21 @@ db.questions.insertMany(
       [
         {
           statement: "What type of diet would you consider yourself?",
-          options: ["Eats Meat with most meals", "Occaisional Meat eater", "Vegetarian", "Vegan"]
+          options: [{value: "serious_meat_eaters",
+                    text: "Eats Meat with most meals"},
+                    {value: "typical_diet",
+                     text: "Occaisional Meat eater"},
+                    {value: "vegetarian" ,
+                    text: "Vegetarian"},
+                    {value: "vegan",
+                    text: "Vegan"}]
         },
         {
           statement: "Where does your food come from?",
-          options: ["Locally Sourced", "Globally Sourced"]
+          options: [{value: "local",
+                    text: "Locally Sourced"},
+                    {value: "abroad",
+                    text: "Globally Sourced"}]
         }
       ]
     },
