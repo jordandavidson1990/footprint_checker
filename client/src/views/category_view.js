@@ -24,7 +24,7 @@ CategoryView.prototype.render = function (category, categoryIndex, categoryTopic
   categoryDiv.appendChild(nextcategoryButton)
   nextcategoryButton.textContent = "Next"
   nextcategoryButton.addEventListener('click', () => {
-    debugger;
+    // debugger;
     PubSub.publish('CategoryView:submit-next-category', categoryDiv)
 
   })

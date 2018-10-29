@@ -49,7 +49,8 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
     // debugger
     const optionLabel = document.createElement('label');
     optionLabel.textContent = option.text || option;
-    optionLabel.for = option.value || option;
+    optionLabel.htmlFor = option.value || option;
+
     // debugger
     optionDiv.appendChild(questionOptions);
     optionDiv.appendChild(optionLabel);

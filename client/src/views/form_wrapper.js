@@ -45,7 +45,6 @@ FormWrapperView.prototype.render = function(questionsCollection){
   this.currentCategory += 1;
 
   // try{throw this.currentCategory}
-  (function(){
   temporaryCurrentCategory = this.currentCategory
 
 
@@ -63,7 +62,6 @@ FormWrapperView.prototype.render = function(questionsCollection){
       this.container.appendChild(calculateButton)
     }
   })
-})();
 }
 
 module.exports = FormWrapperView;
