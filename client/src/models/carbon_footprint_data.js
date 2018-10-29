@@ -21,9 +21,10 @@ CarbonFootprints.prototype.getData = function () {
 CarbonFootprints.prototype.bindEvents = function () {
   PubSub.subscribe('QuestionView:final-selected', (evt) => {
     const totalCarbonFootPrints = this.calculateFootprint(evt.detail);
-    console.log("totalCarbonFootPrints",totalCarbonFootPrints);
+    // console.log("totalCarbonFootPrints",totalCarbonFootPrints);
+    PubSub.publish('CarbonFootprints:results-ready', totalCarbonFootPrints)
     if(Object.keys(evt.detail).length === this.userCarbonFootprints.length){
-      console.log("chart data ready");
+      // console.log("chart data ready");
       PubSub.publish("CarbonFootprints:chart-data-ready", this.userCarbonFootprints);
     }
   })
@@ -107,7 +108,7 @@ CarbonFootprints.prototype.calculateHomeFootprint = function (userInputHome) {
   return result;
 };
 
-<<<<<<< HEADCarbonFootprints.prototype.postResult = function(result){
+CarbonFootprints.prototype.postResult = function(result){
   const request = new Request(this.url);
   request.post(result)
   .then((results) =>{
@@ -121,7 +122,7 @@ CarbonFootprints.prototype.createChartArray = function (category, footprintsValu
   const ukAverage = {"Air Travel": 5000, "Diet": 4000, "Transport": 6000, "Home": 4000};
 
   this.userCarbonFootprints.push([category, footprintsValue, ukAverage[category]]);
-  debugger;
+  // debugger;
 };
 
 module.exports = CarbonFootprints;

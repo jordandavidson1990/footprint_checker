@@ -6,11 +6,15 @@ const DisplayResultsChart = require('./views/display_results_chart.js');
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  console.log("working");
+  // console.log("working");
 
   const resultsChartContainer = document.querySelector('#resultsChart');
   const displayResultsChart = new DisplayResultsChart(resultsChartContainer);
   displayResultsChart.bindEvents();
+
+  const resultContainer = document.querySelector('#footprint-result');
+  const resultDisplay = new ResultView(resultContainer);
+  resultDisplay.bindEvents();
 
   const formWrapper = document.querySelector('#wrapper');
   const formWrapperView = new FormWrapperView(formWrapper);
@@ -20,9 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   carbonFootprints.getData();
   carbonFootprints.bindEvents();
 
-  const resultContainer = document.querySelector('div#footprint-result');
-  const resultDisplay = new ResultView(resultContainer);
-  resultDisplay.bindEvents();
+
 
 
   const questions = new Questions();
