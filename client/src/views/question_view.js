@@ -37,7 +37,7 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
     questionOptions.addEventListener('change', (evt) => {
       userInput[categoryTopic][`Q${questionIndex}`] = evt.target.value;
       // console.log(numberOfQuestions);
-      console.log(evt.target.value);
+      // console.log(evt.target.value);
       if (questionIndex === numberOfQuestions){
         // const userInputWithCategory = {}
         PubSub.publish('QuestionView:option-selected', userInput)
