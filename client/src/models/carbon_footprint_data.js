@@ -18,7 +18,7 @@ CarbonFootprints.prototype.getData = function () {
 
 
 CarbonFootprints.prototype.bindEvents = function () {
-  PubSub.subscribe('QuestionView:option-selected', (evt) => {
+  PubSub.subscribe('QuestionView:final-selected', (evt) => {
     const totalCarbonFootPrints = this.calculateFootprint(evt.detail);
     console.log("totalCarbonFootPrints",totalCarbonFootPrints);
   })
@@ -34,6 +34,7 @@ CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   // }
 
   // if(Object.keys(userInput)[0] === "Air Travel") //re-check as this condition would always be true
+  debugger;
   if(Object.keys(userInput["Air Travel"])[0] === "Q1") {
     airTravelFootprints = this.calculateAirTravelFootprint(userInput["Air Travel"]);
     result += airTravelFootprints;
@@ -55,6 +56,7 @@ CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   }
 
   return result;
+  console.log('result', result);
 };
 
 CarbonFootprints.prototype.calculateAirTravelFootprint = function (userInputAirTravel) {
