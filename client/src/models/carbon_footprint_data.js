@@ -30,7 +30,6 @@ CarbonFootprints.prototype.bindEvents = function () {
 };
 
 CarbonFootprints.prototype.calculateFootprint = function (userInput) {
-  // console.log(userInput);
   let result = 0.0;
   let airTravelFootprints;
   let userCarbonFootprints;
@@ -39,8 +38,6 @@ CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   //   result = this.calculateFootprintForAirTravel(userInput);
   // }
 
-  // if(Object.keys(userInput)[0] === "Air Travel") //re-check as this condition would always be true
-  debugger;
   if(Object.keys(userInput["Air Travel"])[0] === "Q1") {
     airTravelFootprints = this.calculateAirTravelFootprint(userInput["Air Travel"]);
     result += airTravelFootprints;
@@ -109,6 +106,16 @@ CarbonFootprints.prototype.calculateHomeFootprint = function (userInputHome) {
   }
   return result;
 };
+
+<<<<<<< HEADCarbonFootprints.prototype.postResult = function(result){
+  const request = new Request(this.url);
+  request.post(result)
+  .then((results) =>{
+    debugger
+    PubSub.publish('Results:data-loaded', results);
+  })
+  .catch(console.error);
+}
 
 CarbonFootprints.prototype.createChartArray = function (category, footprintsValue) {
   const ukAverage = {"Air Travel": 5000, "Diet": 4000, "Transport": 6000, "Home": 4000};

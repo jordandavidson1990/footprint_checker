@@ -21,16 +21,18 @@ FormWrapperView.prototype.render = function(questionsCollection){
   const calculateButton = document.createElement('button');
   calculateButton.textContent = "Calculate";
 
-PubSub.subscribe('QuestionView:option-selected', (evt) => {
-  calculateButton.addEventListener('click', () => {
-    debugger;
+  PubSub.subscribe('QuestionView:option-selected', (evt) => {
+    calculateButton.addEventListener('click', () => {
+      // debugger;
 
-    PubSub.publish('QuestionView:final-selected', evt.detail)
+      PubSub.publish('QuestionView:final-selected', evt.detail)
+    })
   })
-})
   const categoryView = new CategoryView(this.container);
 
   this.container.innerHTML = "";
+  // debugger;
+
   const topic = questionsCollection[this.currentCategory];
 
   const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length)
@@ -48,22 +50,12 @@ PubSub.subscribe('QuestionView:option-selected', (evt) => {
     this.render(questionsCollection);
     // debugger;
 
-  if(this.currentCategory === questionsCollection.length){
-    // debugger
+    if(this.currentCategory === questionsCollection.length){
+      // debugger
 
-    this.container.appendChild(calculateButton)
-
-  }
-
-})
+      this.container.appendChild(calculateButton)
+    }
+  })
 }
-
-
-// const nextcategoryButton = document.createElement('button');
-// categoryDiv.appendChild(nextcategoryButton)
-// nextcategoryButton.addEventListener('click', () => {
-//   PubSub.publish('CategoryView:submit-next-category', categoryDiv)
-//
-// })
 
 module.exports = FormWrapperView;

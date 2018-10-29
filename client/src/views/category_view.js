@@ -8,7 +8,11 @@ const CategoryView = function (container) {
 CategoryView.prototype.render = function (category, categoryIndex, categoryTopic, numberOfQuestions) {
 
   const categoryDiv = document.createElement('div')
+  const title = document.createElement('h2');
+  // title.type = 'text';
+  title.textContent = categoryTopic;
 
+  categoryDiv.appendChild(title);
   const questionView = new QuestionView(this.container);
   // debugger
   category.forEach((question) => {
