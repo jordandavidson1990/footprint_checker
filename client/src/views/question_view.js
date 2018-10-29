@@ -5,7 +5,7 @@ const QuestionView = function(container){
 };
 let userInput = {};
 QuestionView.prototype.render = function (question, categoryIndex, categoryTopic, questionIndex, numberOfQuestions){
-  debugger
+  // debugger
 
 
 
