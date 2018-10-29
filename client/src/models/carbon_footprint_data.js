@@ -5,6 +5,7 @@ const CarbonFootprints = function(url){
   this.url = 'http://localhost:3000/api/carbonFootprints';
   this.request = new Request(this.url);
   this.carbonFootprintsCollection = {};
+  this.userCarbonFootprints = [['Category', 'Your CO2 Footprints', 'UK Average Person Footprints']];
 };
 
 CarbonFootprints.prototype.getData = function () {
@@ -21,6 +22,10 @@ CarbonFootprints.prototype.bindEvents = function () {
   PubSub.subscribe('QuestionView:final-selected', (evt) => {
     const totalCarbonFootPrints = this.calculateFootprint(evt.detail);
     console.log("totalCarbonFootPrints",totalCarbonFootPrints);
+    if(Object.keys(evt.detail).length === this.userCarbonFootprints.length){
+      console.log("chart data ready");
+      PubSub.publish("CarbonFootprints:chart-data-ready", this.userCarbonFootprints);
+    }
   })
 };
 
@@ -28,6 +33,7 @@ CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   // console.log(userInput);
   let result = 0.0;
   let airTravelFootprints;
+  let userCarbonFootprints;
   // debugger;
   // if(userInput["C1"] === "Air Travel"){  //re-check as this condition would always be true
   //   result = this.calculateFootprintForAirTravel(userInput);
@@ -38,21 +44,26 @@ CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   if(Object.keys(userInput["Air Travel"])[0] === "Q1") {
     airTravelFootprints = this.calculateAirTravelFootprint(userInput["Air Travel"]);
     result += airTravelFootprints;
+    this.createChartArray("Air Travel", result);
+
   }
 
   if(Object.keys(userInput["Diet"])[0] === "Q1") {
     DietFootprints = this.calculateDietFootprint(userInput["Diet"]);
     result += DietFootprints;
+    this.createChartArray("Diet", result);
   }
 
   if(Object.keys(userInput["Transport"])[0] === "Q1") {
     TransportFootprints = this.calculateTransportFootprint(userInput["Transport"]);
     result += TransportFootprints;
+    this.createChartArray("Transport", result);
   }
 
   if(Object.keys(userInput["Home"])[0] === "Q1") {
     HomeFootprints = this.calculateHomeFootprint(userInput["Home"]);
     result += HomeFootprints;
+    this.createChartArray("Home", result);
   }
 
   return result;
@@ -97,6 +108,13 @@ CarbonFootprints.prototype.calculateHomeFootprint = function (userInputHome) {
     result = userInputHome.Q3 * heatingFactor;
   }
   return result;
+};
+
+CarbonFootprints.prototype.createChartArray = function (category, footprintsValue) {
+  const ukAverage = {"Air Travel": 5000, "Diet": 4000, "Transport": 6000, "Home": 4000};
+
+  this.userCarbonFootprints.push([category, footprintsValue, ukAverage[category]]);
+  debugger;
 };
 
 module.exports = CarbonFootprints;
