@@ -3,6 +3,8 @@ const CategoryView = require('./category_view.js')
 
 const FormWrapperView = function(container){
   this.container = container;
+  this.currentCategory = 0;
+  this.totalCarbonFootPrints = 0;
 };
 
 FormWrapperView.prototype.bindEvents = function(){
@@ -16,16 +18,52 @@ FormWrapperView.prototype.bindEvents = function(){
 FormWrapperView.prototype.render = function(questionsCollection){
   // debugger;
 
-  const wrapperDiv = document.createElement('nav')
+  const calculateButton = document.createElement('button');
+  calculateButton.textContent = "Calculate";
 
+PubSub.subscribe('QuestionView:option-selected', (evt) => {
+  calculateButton.addEventListener('click', () => {
+    debugger;
 
-    const categoryView = new CategoryView(this.container);
-    questionsCollection.forEach((topic) =>
-    {
-      // debugger;
-      categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length)
-    })
+    PubSub.publish('QuestionView:final-selected', evt.detail)
+  })
+})
+  const categoryView = new CategoryView(this.container);
+
+  this.container.innerHTML = "";
+  const topic = questionsCollection[this.currentCategory];
+
+  const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length)
+
+  this.container.appendChild(categoryDiv);
+
+  // Increment current category
+  this.currentCategory += 1;
+
+  PubSub.subscribe('CategoryView:submit-next-category', (event) => {
+    // make sure currentCategory is not > length of categories
+    if(this.currentCategory < questionsCollection.length)
+    // { debugger;
+    // Somehow call this thing again
+    this.render(questionsCollection);
+    // debugger;
+
+  if(this.currentCategory === questionsCollection.length){
     // debugger
-};
+
+    this.container.appendChild(calculateButton)
+
+  }
+
+})
+}
+
+
+// const nextcategoryButton = document.createElement('button');
+// categoryDiv.appendChild(nextcategoryButton)
+// nextcategoryButton.addEventListener('click', () => {
+//   PubSub.publish('CategoryView:submit-next-category', categoryDiv)
+//
+// })
 
 module.exports = FormWrapperView;
