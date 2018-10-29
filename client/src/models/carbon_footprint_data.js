@@ -114,15 +114,15 @@ CarbonFootprints.prototype.calculateHomeFootprint = function (userInputHome) {
   return result;
 };
 
-CarbonFootprints.prototype.postResult = function(result){
-  const request = new Request(this.url);
-  request.post(result)
-  .then((results) =>{
-    debugger
-    PubSub.publish('Results:data-loaded', results);
-  })
-  .catch(console.error);
-}
+// CarbonFootprints.prototype.postResult = function(result){
+//   const request = new Request(this.url);
+//   request.post(result)
+//   .then((results) =>{
+//     debugger
+//     PubSub.publish('Results:data-loaded', results);
+//   })
+//   .catch(console.error);
+// }
 
 CarbonFootprints.prototype.createChartArray = function (category, footprintsValue) {
   const ukAverage = {"Air Travel": 5000, "Diet": 4000, "Transport": 6000, "Home": 4000};

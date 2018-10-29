@@ -16,7 +16,7 @@ CategoryView.prototype.render = function (category, categoryIndex, categoryTopic
   const questionView = new QuestionView(this.container);
   // debugger
   category.forEach((question) => {
-    const questionContainer = questionView.render(question, categoryIndex, categoryTopic, category.findIndex(q => q.statement === question.statement)+1, numberOfQuestions)
+    let questionContainer = questionView.render(question, categoryIndex, categoryTopic, category.findIndex(q => q.statement === question.statement)+1, numberOfQuestions)
 
     categoryDiv.appendChild(questionContainer)
   })
@@ -24,6 +24,7 @@ CategoryView.prototype.render = function (category, categoryIndex, categoryTopic
   categoryDiv.appendChild(nextcategoryButton)
   nextcategoryButton.textContent = "Next"
   nextcategoryButton.addEventListener('click', () => {
+    debugger;
     PubSub.publish('CategoryView:submit-next-category', categoryDiv)
 
   })
