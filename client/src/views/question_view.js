@@ -5,8 +5,12 @@ const QuestionView = function(container){
 };
 let userInput = {};
 QuestionView.prototype.render = function (question, categoryIndex, categoryTopic, questionIndex, numberOfQuestions){
-  // debugger
+  debugger
+
+
+
   const questionContainer = document.createElement('div');
+
 
   const questionStatement = document.createElement('p');
   questionStatement.textContent = question.statement;

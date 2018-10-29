@@ -23,7 +23,7 @@ FormWrapperView.prototype.render = function(questionsCollection){
 
 PubSub.subscribe('QuestionView:option-selected', (evt) => {
   calculateButton.addEventListener('click', () => {
-    debugger;
+    // debugger;
 
     PubSub.publish('QuestionView:final-selected', evt.detail)
   })
@@ -31,6 +31,8 @@ PubSub.subscribe('QuestionView:option-selected', (evt) => {
   const categoryView = new CategoryView(this.container);
 
   this.container.innerHTML = "";
+debugger;
+
   const topic = questionsCollection[this.currentCategory];
 
   const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length)
