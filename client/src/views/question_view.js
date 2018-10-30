@@ -7,13 +7,14 @@ let userInput = {};
 QuestionView.prototype.render = function (question, categoryIndex, categoryTopic, questionIndex, numberOfQuestions){
   // debugger
 
-
-
   const questionContainer = document.createElement('div');
 
 
+// debugger
+// fact.textContent = question.fact;
   const questionStatement = document.createElement('p');
   questionStatement.textContent = question.statement;
+
 
   questionContainer.appendChild(questionStatement);
 
@@ -41,7 +42,7 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
       if (questionIndex === numberOfQuestions){
         // const userInputWithCategory = {}
         PubSub.publish('QuestionView:option-selected', userInput)
-        
+
         // debugger;
       }
 

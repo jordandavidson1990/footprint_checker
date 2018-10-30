@@ -12,7 +12,6 @@ CarbonFootprints.prototype.getData = function () {
   this.request.get()
   .then((carbonFootprintsCollection) => {
     this.carbonFootprintsCollection = carbonFootprintsCollection;
-    // PubSub.publish('CarbonFootprints:data-loaded', carbonFootprintsCollection);
   })
   .catch(console.err);
 };
@@ -20,12 +19,10 @@ CarbonFootprints.prototype.getData = function () {
 
 CarbonFootprints.prototype.bindEvents = function () {
   PubSub.subscribe('QuestionView:final-selected', (evt) => {
-    // debugger;
     const totalCarbonFootPrints = this.calculateFootprint(evt.detail);
-    // console.log("totalCarbonFootPrints",totalCarbonFootPrints);
+debugger;
     PubSub.publish('CarbonFootprints:results-ready', totalCarbonFootPrints)
-    if(Object.keys(evt.detail).length === this.userCarbonFootprints.length - 1){
-      // console.log("chart data ready");
+    if(Object.keys(evt.detail).length === this.userCarbonFootprints.length){
       PubSub.publish("CarbonFootprints:chart-data-ready", this.userCarbonFootprints);
     }
   })
@@ -34,13 +31,11 @@ CarbonFootprints.prototype.bindEvents = function () {
 CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   let result = 0.0;
   let airTravelFootprints;
-  // let userCarbonFootprints;
   this.userCarbonFootprints = [['Category', 'Your CO2 Footprints', 'UK Average Person Footprints']];
 
   if(Object.keys(userInput["Air Travel"])[0] === "Q1") {
     airTravelFootprints = this.calculateAirTravelFootprint(userInput["Air Travel"]);
     result += airTravelFootprints;
-    // debugger;
     this.createChartArray("Air Travel", result);
 
   }
@@ -48,21 +43,18 @@ CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   if(Object.keys(userInput["Diet"])[0] === "Q1") {
     DietFootprints = this.calculateDietFootprint(userInput["Diet"]);
     result += DietFootprints;
-    // debugger;
     this.createChartArray("Diet", result);
   }
 
   if(Object.keys(userInput["Transport"])[0] === "Q1") {
     TransportFootprints = this.calculateTransportFootprint(userInput["Transport"]);
     result += TransportFootprints;
-    // debugger;
     this.createChartArray("Transport", result);
   }
 
   if(Object.keys(userInput["Home"])[0] === "Q1") {
     HomeFootprints = this.calculateHomeFootprint(userInput["Home"]);
     result += HomeFootprints;
-    // debugger;
     this.createChartArray("Home", result);
   }
 
@@ -101,6 +93,7 @@ CarbonFootprints.prototype.calculateHomeFootprint = function (userInputHome) {
   }
   return result;
 };
+
 
 CarbonFootprints.prototype.createChartArray = function (category, footprintsValue) {
   const ukAverage = {"Air Travel": 5000, "Diet": 4000, "Transport": 6000, "Home": 4000};

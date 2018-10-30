@@ -12,12 +12,22 @@ div.footprint-result{
   margin:auto;
   margin-bottom: 5px;
   /* border: 2px solid #8AC6D0; */
-  border-radius: 50%;
+  border-radius: 20px;
   background-image:url(./images/ocean.jpg);
   opacity: 0.9;
   text-align: center;
   /* color: inherit; */
 
+}
+
+.forest{
+  opacity:0.9;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #8AC6D0;
+  border-radius: 90px;
+  width:80%;
+  margin:auto;
 }
 
 nav>ul{
@@ -56,6 +66,7 @@ button{
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
 }
 
 button::after {
@@ -71,6 +82,17 @@ button:hover::after {
   right: 0.7rem;
 }
 
+#topicImg{
+  width:80%;
+  margin:auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  opacity: 0.9;
+  border-radius: 90px;
+  background-color: inherit;
+}
+
 /*
 button#back{
   content: '\203A';
@@ -83,7 +105,7 @@ button#back{
    left:0.7rem;
  }
 
-div.footprint-result p{
+div.footprint-result h3{
    color:#554971;
 }
 
@@ -159,7 +181,7 @@ input + label::before {
 }
 
 input:checked + label::before {
-  background: #A89F68;
+  background: #6BBF59;
 }
 #logo{
   /* background-image: url('./images/'); */
@@ -169,3 +191,7 @@ input:checked + label::before {
  height: 30px;
  opacity: 0.5;
 }
+
+/* .resultsChart{
+  border-radius: 20px;
+} */
