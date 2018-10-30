@@ -30,25 +30,22 @@ CategoryView.prototype.render = function (category, categoryIndex, categoryTopic
 
     nextcategoryButton.textContent = "Next"
     nextcategoryButton.addEventListener('click', () => {
-      // debugger;
-      PubSub.publish('CategoryView:submit-next-category', categoryDiv)
-    }
-  )
-}
-const backCategoryButton = document.createElement('button');
 
-if(categoryIndex > 1){
-  categoryDiv.appendChild(backCategoryButton){
+      PubSub.publish('CategoryView:submit-next-category', categoryDiv)
+    })
+  }
+  const backCategoryButton = document.createElement('button');
+  if(categoryIndex > 1){
+    categoryDiv.appendChild(backCategoryButton)
 
     backCategoryButton.textContent = "Back"
+    backCategoryButton.id = "back"
     backCategoryButton.addEventListener('click', () => {
-      PubSub.publish('CategoryView:submit-next-category', categoryDiv)
-    }
-  )
-}
-}
-// debugger
-return categoryDiv;
+
+      PubSub.publish('CategoryView:submit-back-category', categoryDiv)
+    })
+  }
+  return categoryDiv;
 };
 
 module.exports = CategoryView;
