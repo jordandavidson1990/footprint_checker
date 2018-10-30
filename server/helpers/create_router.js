@@ -53,6 +53,7 @@ const createRouter = function(collection) {
 
   router.put('/:id', (req, res) => {
   const id = req.params.id;
+  // const id = collection.find().limit(1).sort({$natural:-1})
   const updatedData = req.body;
   collection
     .updateOne(

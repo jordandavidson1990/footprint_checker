@@ -25,6 +25,7 @@ DisplayResultsChart.prototype.bindEvents = function () {
           // legend: { position: 'top', maxLines: 2 },
           colors: ['#5C3292', '#1A8763', '#871B47', '#999999'],
           interpolateNulls: false,
+          animation: {"startup": true}
         };
 
         const resultChart = new GoogleChartsModule.GoogleCharts.api.visualization.ColumnChart(document.querySelector('#resultsChart'));
