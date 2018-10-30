@@ -80,7 +80,7 @@ FormWrapperView.prototype.render = function(questionsCollection){
     // debugger
 
     // x = topic.category + 1
-    const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length)
+    const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length, questionsCollection.length)
 
     this.container.appendChild(categoryDiv);
 
