@@ -102,7 +102,6 @@ FormWrapperView.prototype.render = function(questionsCollection){
   })
   }
 // })();
->>>>>>> develop
 }
 
 module.exports = FormWrapperView;
