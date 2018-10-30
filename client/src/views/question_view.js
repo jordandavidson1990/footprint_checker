@@ -41,6 +41,7 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
       if (questionIndex === numberOfQuestions){
         // const userInputWithCategory = {}
         PubSub.publish('QuestionView:option-selected', userInput)
+        
         // debugger;
       }
 

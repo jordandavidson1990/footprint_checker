@@ -37,7 +37,7 @@ FormWrapperView.prototype.render = function(questionsCollection){
   // debugger
 
   // x = topic.category + 1
-  const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length)
+  const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length, questionsCollection.length)
 
   this.container.appendChild(categoryDiv);
 
@@ -49,17 +49,22 @@ FormWrapperView.prototype.render = function(questionsCollection){
 
 
   PubSub.subscribe('CategoryView:submit-next-category', (event) => {
+    // debugger
     // make sure currentCategory is not > length of categories
     if(temporaryCurrentCategory < questionsCollection.length)
     // { debugger;
     // Somehow call this thing again
     this.render(questionsCollection);
     // debugger;
-
     if(temporaryCurrentCategory === questionsCollection.length){
-      // debugger
+      debugger
 
+      // event.detail.removeChild(event.detail.querySelector('button'))
       this.container.appendChild(calculateButton)
+
+
+      debugger
+      // event.detail.removeChild(event.detail.querySelector('button'))
     }
   })
 }
