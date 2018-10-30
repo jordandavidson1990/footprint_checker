@@ -45,6 +45,7 @@ FormWrapperView.prototype.render = function(questionsCollection){
   this.currentCategory += 1;
 
   // try{throw this.currentCategory}
+  // (function(){
   temporaryCurrentCategory = this.currentCategory
 
 
@@ -67,6 +68,10 @@ FormWrapperView.prototype.render = function(questionsCollection){
       // event.detail.removeChild(event.detail.querySelector('button'))
     }
   })
+<<<<<<< HEAD
+=======
+// })();
+>>>>>>> develop
 }
 
 module.exports = FormWrapperView;
