@@ -6,16 +6,30 @@ const ResultView = function(container){
 
 ResultView.prototype.bindEvents = function () {
 
-  const totalDiv = document.createElement('div')
+  let totalDiv = document.createElement('div');
+  totalDiv.id = "totalDiv";
 
   PubSub.subscribe('CarbonFootprints:results-ready', (totalCarbonFootPrints) => {
-    // debugger
-    const total = document.createElement('p');
-    total.textContent = `Result: ${totalCarbonFootPrints.detail}`
-    totalDiv.appendChild(total)
-  });
+    if(event.target.body.querySelector('#totalDiv')){
+      debugger;
+      const previoustotalDiv = document.querySelector('#totalDiv')
+      previoustotalDiv.parentNode.removeChild(previoustotalDiv);
 
-  this.container.appendChild(totalDiv)
+      newTotalDiv = document.createElement('div');
+      newTotalDiv.id = "totalDiv";
+
+      const total = document.createElement('p');
+      total.textContent = `Result: ${totalCarbonFootPrints.detail}`
+      newTotalDiv.appendChild(total);
+      this.container.appendChild(newTotalDiv)
+    }
+    // else{
+    //   const total = document.createElement('p');
+    //   total.textContent = `Result: ${totalCarbonFootPrints.detail}`
+    //   totalDiv.appendChild(total)
+    // }
+  });
+  this.container.appendChild(totalDiv);
 }
 
 // ResultView.prototype.render = function(result){
