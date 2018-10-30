@@ -172,5 +172,5 @@ input:checked + label::before {
 
 #visualDiv {
   display: flex;
-  flex-direction: row-reverse;;
+  flex-direction: row-reverse;
 }
