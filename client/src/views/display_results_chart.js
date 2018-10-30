@@ -7,7 +7,7 @@ const DisplayResultsChart = function(container){
 
 DisplayResultsChart.prototype.bindEvents = function () {
   const paragraph = document.createElement('p');
-  paragraph.textContent = "Test Graph Area";
+  // paragraph.textContent = "Test Graph Area";
   this.container.appendChild(paragraph);
 
   PubSub.subscribe("CarbonFootprints:chart-data-ready", (evt) => {

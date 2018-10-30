@@ -25,8 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   carbonFootprints.bindEvents();
 
 
-
-
   const questions = new Questions();
   questions.getData();
   // questions.bindEvents();

@@ -16,25 +16,34 @@ CategoryView.prototype.render = function (category, categoryIndex, categoryTopic
   const questionView = new QuestionView(this.container);
   // debugger
   category.forEach((question) => {
-// debugger
+    // debugger
     let questionContainer =
 
-     questionView.render(question, categoryIndex, categoryTopic, category.findIndex(q => q.statement === question.statement)+1, numberOfQuestions)
-// debugger
+    questionView.render(question, categoryIndex, categoryTopic, category.findIndex(q => q.statement === question.statement)+1, numberOfQuestions)
+    // debugger
     categoryDiv.appendChild(questionContainer)
   })
   const nextcategoryButton = document.createElement('button');
   if(categoryIndex < totalNumberOfCategories){
-  categoryDiv.appendChild(nextcategoryButton)
+    categoryDiv.appendChild(nextcategoryButton)
 
-  nextcategoryButton.textContent = "Next"
-  nextcategoryButton.addEventListener('click', () => {
-    // debugger;
-    PubSub.publish('CategoryView:submit-next-category', categoryDiv)
+    nextcategoryButton.textContent = "Next"
+    nextcategoryButton.addEventListener('click', () => {
+
+      PubSub.publish('CategoryView:submit-next-category', categoryDiv)
+    })
   }
-    // debugger
-  )}
-  // debugger
+  const backCategoryButton = document.createElement('button');
+  if(categoryIndex > 1){
+    categoryDiv.appendChild(backCategoryButton)
+
+    backCategoryButton.textContent = "Back"
+    backCategoryButton.id = "back"
+    backCategoryButton.addEventListener('click', () => {
+
+      PubSub.publish('CategoryView:submit-back-category', categoryDiv)
+    })
+  }
   return categoryDiv;
 };
 

@@ -11,7 +11,7 @@ div.footprint-result{
   height:auto;
   margin:auto;
   margin-bottom: 5px;
-  border: 2px solid #8AC6D0;
+  /* border: 2px solid #8AC6D0; */
   border-radius: 50%;
   background-image:url(./images/ocean.jpg);
   opacity: 0.9;
@@ -20,8 +20,24 @@ div.footprint-result{
 
 }
 
+nav>ul{
+  list-style-type: none;
+  /* margin:0; */
+  padding:8px;
+  /* display: inline; */
+  /* width:60px; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
 h2{
   text-align: center;
+  /* background-color: grey; */
+  border-radius: 700px;
+  background-image: url(./images/ocean.jpg);
+  color:inherit;
+  opacity: 0.7;
 }
 
 p{
@@ -54,6 +70,18 @@ button::after {
 button:hover::after {
   right: 0.7rem;
 }
+
+/*
+button#back{
+  content: '\203A';
+  display: inline-block;
+  position:absolute;
+  left: 1rem;
+  transition:left 0.3s ease-in-out;
+ } */
+ button:hover::before{
+   left:0.7rem;
+ }
 
 div.footprint-result p{
    color:#554971;
@@ -132,4 +160,12 @@ input + label::before {
 
 input:checked + label::before {
   background: #A89F68;
+}
+#logo{
+  /* background-image: url('./images/'); */
+ margin-left: auto;
+ margin-right: auto;
+ width:30px;
+ height: 30px;
+ opacity: 0.5;
 }
