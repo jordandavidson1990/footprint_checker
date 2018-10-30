@@ -11,7 +11,6 @@ ResultView.prototype.bindEvents = function () {
 
   PubSub.subscribe('CarbonFootprints:results-ready', (totalCarbonFootPrints) => {
     if(event.target.body.querySelector('#totalDiv')){
-      debugger;
       const previoustotalDiv = document.querySelector('#totalDiv')
       previoustotalDiv.parentNode.removeChild(previoustotalDiv);
 
@@ -31,14 +30,5 @@ ResultView.prototype.bindEvents = function () {
   });
   this.container.appendChild(totalDiv);
 }
-
-// ResultView.prototype.render = function(result){
-//   const resultContainer = document.createElement('div');
-//   resultContainer.id = 'result';
-// debugger;
-//   const checkerResult = document.createElement('p');
-//   checkerResult.textContent = result;
-//   // return checkerResult
-// };
 
 module.exports = ResultView;
