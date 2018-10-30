@@ -24,7 +24,7 @@ CarbonFootprints.prototype.bindEvents = function () {
     const totalCarbonFootPrints = this.calculateFootprint(evt.detail);
     // console.log("totalCarbonFootPrints",totalCarbonFootPrints);
     PubSub.publish('CarbonFootprints:results-ready', totalCarbonFootPrints)
-    if(Object.keys(evt.detail).length === this.userCarbonFootprints.length){
+    if(Object.keys(evt.detail).length === this.userCarbonFootprints.length - 1){
       // console.log("chart data ready");
       PubSub.publish("CarbonFootprints:chart-data-ready", this.userCarbonFootprints);
     }
