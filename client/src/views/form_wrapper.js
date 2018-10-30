@@ -55,8 +55,8 @@ FormWrapperView.prototype.render = function(questionsCollection){
   PubSub.subscribe('CategoryView:submit-next-category', (event) => {
     // debugger
     // make sure currentCategory is not > length of categories
-    if(temporaryCurrentCategory < questionsCollection.length)
-      debugger;
+    if(temporaryCurrentCategory < questionsCollection.length){
+      // debugger;
     // Somehow call this thing again
     // this.render(questionsCollection);
 
@@ -90,15 +90,16 @@ FormWrapperView.prototype.render = function(questionsCollection){
 
     // debugger;
     if(temporaryCurrentCategory === questionsCollection.length){
-      debugger
+      // debugger
 
       // event.detail.removeChild(event.detail.querySelector('button'))
       this.container.appendChild(calculateButton)
 
 
-      debugger
+      // debugger
       // event.detail.removeChild(event.detail.querySelector('button'))
     }
+  }
   })
   }
 // })();
