@@ -129,10 +129,10 @@ div.footprint-result p{
   /* border-radius: 50px */
 }
 
-/* .resultsChart {
+.resultsChart {
   height: 400px;
   width: 100%;
-} */
+}
 
 input {
   visibility: hidden;
@@ -168,4 +168,9 @@ input:checked + label::before {
  width:30px;
  height: 30px;
  opacity: 0.5;
+}
+
+#visualDiv {
+  display: flex;
+  flex-direction: row-reverse;;
 }
