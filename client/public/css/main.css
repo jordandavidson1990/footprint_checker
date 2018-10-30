@@ -129,10 +129,10 @@ div.footprint-result p{
   /* border-radius: 50px */
 }
 
-.resultsChart {
+/* .resultsChart {
   height: 400px;
   width: 100%;
-}
+} */
 
 input {
   visibility: hidden;
