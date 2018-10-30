@@ -37,7 +37,7 @@ DisplayResultsChart.prototype.drawTableAndChart = function (inputArray) {
 
 
   let table = new google.visualization.Table(document.querySelector('#resultsChart'));
-  table.draw(view);
+  table.draw(view, {width: '100%'});
 
   // {width: '80%', height: '100%'}
 

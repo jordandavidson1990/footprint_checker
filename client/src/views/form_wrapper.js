@@ -37,7 +37,9 @@ FormWrapperView.prototype.render = function(questionsCollection){
   // debugger
 
   // x = topic.category + 1
-  const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length, questionsCollection.length)
+  const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length, questionsCollection.length,
+   topic.fact, topic.image)
+  // debugger
 
   this.container.appendChild(categoryDiv);
 
@@ -71,30 +73,20 @@ FormWrapperView.prototype.render = function(questionsCollection){
         PubSub.publish('QuestionView:final-selected', evt.detail)
       })
     })
-    const categoryView = new CategoryView(this.container);
+      const categoryView = new CategoryView(this.container);
 
-    this.container.innerHTML = "";
-    // debugger;
+      this.container.innerHTML = "";
+      // debugger;
 
-    const topic = questionsCollection[temporaryCurrentCategory];
-    // debugger
-
-    // x = topic.category + 1
-    const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length, questionsCollection.length)
-
-    this.container.appendChild(categoryDiv);
-
-    // Increment current category
-    temporaryCurrentCategory += 1;
-    //////////
-
-    // debugger;
-    if(temporaryCurrentCategory === questionsCollection.length){
+      const topic = questionsCollection[temporaryCurrentCategory];
       // debugger
+      const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length, questionsCollection.length, topic.fact, topic.image)
+       // debugger
 
-      // event.detail.removeChild(event.detail.querySelector('button'))
-      this.container.appendChild(calculateButton)
-
+      this.container.appendChild(categoryDiv);
+      temporaryCurrentCategory += 1;
+      if(temporaryCurrentCategory === questionsCollection.length){
+        this.container.appendChild(calculateButton)
 
       // debugger
       // event.detail.removeChild(event.detail.querySelector('button'))
@@ -102,7 +94,7 @@ FormWrapperView.prototype.render = function(questionsCollection){
   }
   })
   }
-// })();
 }
+
 
 module.exports = FormWrapperView;

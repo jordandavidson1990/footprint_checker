@@ -5,11 +5,24 @@ const CategoryView = function (container) {
   this.container = container;
 };
 
-CategoryView.prototype.render = function (category, categoryIndex, categoryTopic, numberOfQuestions, totalNumberOfCategories) {
+// debugger
+CategoryView.prototype.render = function (category, categoryIndex, categoryTopic, numberOfQuestions, totalNumberOfCategories, fact, img) {
 
   const categoryDiv = document.createElement('div')
+  categoryDiv.id = "categoryDiv"
+  // debugger
+// debugger
+  const topicImg = document.createElement("img");
+  topicImg.src = img;
+  topicImg.alt = `image of ${categoryTopic}`
+  topicImg.id = 'topicImg';
+  categoryDiv.appendChild(topicImg)
+
+  const categoryFact = document.createElement('p')
+  categoryFact.textContent = fact
+  // debugger
+  categoryDiv.appendChild(categoryFact)
   const title = document.createElement('h2');
-  // title.type = 'text';
   title.textContent = categoryTopic;
 
   categoryDiv.appendChild(title);
@@ -32,17 +45,6 @@ CategoryView.prototype.render = function (category, categoryIndex, categoryTopic
     nextcategoryButton.addEventListener('click', () => {
 
       PubSub.publish('CategoryView:submit-next-category', categoryDiv)
-    })
-  }
-  const backCategoryButton = document.createElement('button');
-  if(categoryIndex > 1){
-    categoryDiv.appendChild(backCategoryButton)
-
-    backCategoryButton.textContent = "Back"
-    backCategoryButton.id = "back"
-    backCategoryButton.addEventListener('click', () => {
-
-      PubSub.publish('CategoryView:submit-back-category', categoryDiv)
     })
   }
   return categoryDiv;
