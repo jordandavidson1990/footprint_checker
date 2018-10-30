@@ -1,24 +1,62 @@
 body{
   background-color: #63768D;
   color: #36213E;
-  font-family: "Palatino Linotype" sans-serif;
+  font-family: "Palatino Linotype", sans-serif;
   background-image: url(./images/trees.jpg);
+  margin: 0;
 }
 
-div.earth-img{
-width:80%;
-height:auto;
-margin:auto;
-margin-bottom: 5px;
-border: 2px solid #8AC6D0;
-border-radius: 50%;
-  content:url(./images/earth2.jpg);
-  opacity: 0.7;
+div.footprint-result{
+  width:80%;
+  height:auto;
+  margin:auto;
+  margin-bottom: 5px;
+  border: 2px solid #8AC6D0;
+  border-radius: 50%;
+  background-image:url(./images/ocean.jpg);
+  opacity: 0.9;
+  text-align: center;
+  /* color: inherit; */
+
+}
+
+h2{
+  text-align: center;
 }
 
 p{
   color: #B8F3FF;
   /* text-align: center; */
+}
+
+button{
+  position: relative;
+  padding: 0.7rem 1.5rem;
+  border-radius: 3px;
+  border: 0;
+  background-color: #B8F3FF;
+  display: block;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button::after {
+  /* \ to connect to toptal asci character  */
+  content: '\203A';
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+  transition: right 0.3s ease-in-out;
+}
+
+button:hover::after {
+  right: 0.7rem;
+}
+
+div.footprint-result p{
+   color:#554971;
 }
 
 .footprint-header{
@@ -32,7 +70,7 @@ p{
   /* text-decoration: underline; */
   width:100%;
   height:auto;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   margin-bottom: 10px;
   opacity: 0.8;
 }
@@ -60,10 +98,38 @@ p{
 }
 .ocean{
   background-image: url(./images/ocean.jpg);
-  border-radius: 50px
+  /* border-radius: 50px */
 }
 
 .resultsChart {
   height: 400px;
   width: 100%;
+}
+
+input {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+input + label {
+  position: relative;
+  cursor: pointer;
+}
+
+input + label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #36213E;
+  border-radius: 100%;
+  top: 5px;
+  position: relative;
+  margin-right: 20px;
+  margin-left: 40px;
+}
+
+input:checked + label::before {
+  background: #A89F68;
 }

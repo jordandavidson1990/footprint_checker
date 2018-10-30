@@ -5,7 +5,7 @@ const CategoryView = function (container) {
   this.container = container;
 };
 
-CategoryView.prototype.render = function (category, categoryIndex, categoryTopic, numberOfQuestions) {
+CategoryView.prototype.render = function (category, categoryIndex, categoryTopic, numberOfQuestions, totalNumberOfCategories) {
 
   const categoryDiv = document.createElement('div')
   const title = document.createElement('h2');
@@ -16,21 +16,26 @@ CategoryView.prototype.render = function (category, categoryIndex, categoryTopic
   const questionView = new QuestionView(this.container);
   // debugger
   category.forEach((question) => {
-    let questionContainer = questionView.render(question, categoryIndex, categoryTopic, category.findIndex(q => q.statement === question.statement)+1, numberOfQuestions)
+// debugger
+    let questionContainer =
 
+     questionView.render(question, categoryIndex, categoryTopic, category.findIndex(q => q.statement === question.statement)+1, numberOfQuestions)
+// debugger
     categoryDiv.appendChild(questionContainer)
   })
   const nextcategoryButton = document.createElement('button');
+  if(categoryIndex < totalNumberOfCategories){
   categoryDiv.appendChild(nextcategoryButton)
+
   nextcategoryButton.textContent = "Next"
   nextcategoryButton.addEventListener('click', () => {
-    debugger;
+    // debugger;
     PubSub.publish('CategoryView:submit-next-category', categoryDiv)
-
-  })
+  }
+    // debugger
+  )}
   // debugger
   return categoryDiv;
-  // this.container.appendChild(categoryDiv);
 };
 
 module.exports = CategoryView;

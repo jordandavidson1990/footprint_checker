@@ -20,7 +20,7 @@ CarbonFootprints.prototype.getData = function () {
 
 CarbonFootprints.prototype.bindEvents = function () {
   PubSub.subscribe('QuestionView:final-selected', (evt) => {
-    debugger;
+    // debugger;
     const totalCarbonFootPrints = this.calculateFootprint(evt.detail);
     // console.log("totalCarbonFootPrints",totalCarbonFootPrints);
     PubSub.publish('CarbonFootprints:results-ready', totalCarbonFootPrints)
@@ -44,7 +44,7 @@ CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   if(Object.keys(userInput["Air Travel"])[0] === "Q1") {
     airTravelFootprints = this.calculateAirTravelFootprint(userInput["Air Travel"]);
     result += airTravelFootprints;
-    debugger;
+    // debugger;
     this.createChartArray("Air Travel", result);
 
   }
@@ -52,21 +52,21 @@ CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   if(Object.keys(userInput["Diet"])[0] === "Q1") {
     DietFootprints = this.calculateDietFootprint(userInput["Diet"]);
     result += DietFootprints;
-    debugger;
+    // debugger;
     this.createChartArray("Diet", result);
   }
 
   if(Object.keys(userInput["Transport"])[0] === "Q1") {
     TransportFootprints = this.calculateTransportFootprint(userInput["Transport"]);
     result += TransportFootprints;
-    debugger;
+    // debugger;
     this.createChartArray("Transport", result);
   }
 
   if(Object.keys(userInput["Home"])[0] === "Q1") {
     HomeFootprints = this.calculateHomeFootprint(userInput["Home"]);
     result += HomeFootprints;
-    debugger;
+    // debugger;
     this.createChartArray("Home", result);
   }
 
