@@ -68,10 +68,6 @@ FormWrapperView.prototype.render = function(questionsCollection){
       // event.detail.removeChild(event.detail.querySelector('button'))
     }
   })
-<<<<<<< HEAD
-=======
-// })();
->>>>>>> develop
 }
 
 module.exports = FormWrapperView;
