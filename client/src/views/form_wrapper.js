@@ -15,13 +15,6 @@ FormWrapperView.prototype.bindEvents = function(){
   });
 };
 
-// FormWrapperView.prototype.renderPrevious = function(questionsCollection){
-//   const categoryView = new CategoryView(this.container);
-//   this.container.html= "";
-//
-//
-// }
-
 FormWrapperView.prototype.render = function(questionsCollection){
   // debugger;
 
@@ -48,6 +41,7 @@ FormWrapperView.prototype.render = function(questionsCollection){
 
   this.container.appendChild(categoryDiv);
 
+  // Increment current category
   this.currentCategory += 1;
 
 
@@ -59,7 +53,8 @@ FormWrapperView.prototype.render = function(questionsCollection){
 
 
   PubSub.subscribe('CategoryView:submit-next-category', (event) => {
-
+    // debugger
+    // make sure currentCategory is not > length of categories
     if(temporaryCurrentCategory < questionsCollection.length)
       debugger;
     // Somehow call this thing again
@@ -95,10 +90,18 @@ FormWrapperView.prototype.render = function(questionsCollection){
 
     // debugger;
     if(temporaryCurrentCategory === questionsCollection.length){
+      debugger
 
+      // event.detail.removeChild(event.detail.querySelector('button'))
       this.container.appendChild(calculateButton)
+
+
+      debugger
+      // event.detail.removeChild(event.detail.querySelector('button'))
     }
   })
+  }
+// })();
 }
 
 module.exports = FormWrapperView;
