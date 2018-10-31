@@ -5,23 +5,14 @@ const QuestionView = function(container){
 };
 let userInput = {};
 QuestionView.prototype.render = function (question, categoryIndex, categoryTopic, questionIndex, numberOfQuestions){
-  // debugger
 
   const questionContainer = document.createElement('div');
-
-
-// debugger
-// fact.textContent = question.fact;
   const questionStatement = document.createElement('p');
   questionStatement.textContent = question.statement;
-
 
   questionContainer.appendChild(questionStatement);
 
   question.options.forEach((option) => {
-    // debugger
-
-    // this.container.innerHTML = '';
 
     const optionDiv = document.createElement('div');
 
@@ -32,7 +23,6 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
     questionOptions.id = option.value || option;
 
 
-    //being tested
     userInput[categoryTopic] = {};
 
     questionOptions.addEventListener('change', (evt) => {
@@ -42,18 +32,14 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
       if (questionIndex === numberOfQuestions){
         // const userInputWithCategory = {}
         PubSub.publish('QuestionView:option-selected', userInput)
-
-        // debugger;
       }
 
     });
 
-    // debugger
     const optionLabel = document.createElement('label');
     optionLabel.textContent = option.text || option;
     optionLabel.htmlFor = option.value || option;
 
-    // debugger
     optionDiv.appendChild(questionOptions);
     optionDiv.appendChild(optionLabel);
     questionContainer.appendChild(optionDiv);
