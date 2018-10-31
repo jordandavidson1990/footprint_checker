@@ -31,7 +31,8 @@ FormWrapperView.prototype.render = function(questionsCollection){
   const topic = questionsCollection[this.currentCategory];
 
   const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length, questionsCollection.length,
-   topic.fact, topic.image)
+   topic.fact, topic.image, topic.source)
+   // debugger
 
   this.container.appendChild(categoryDiv);
 
@@ -63,7 +64,7 @@ FormWrapperView.prototype.render = function(questionsCollection){
       this.container.innerHTML = "";
 
       const topic = questionsCollection[temporaryCurrentCategory];
-      const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length, questionsCollection.length, topic.fact, topic.image)
+      const categoryDiv = categoryView.render(topic.questions, questionsCollection.findIndex(c => c.category === topic.category)+1, topic.category, topic.questions.length, questionsCollection.length, topic.fact, topic.image, topic.source)
 
       this.container.appendChild(categoryDiv);
       temporaryCurrentCategory += 1;

@@ -123,8 +123,10 @@ db.questions.insertMany(
           }
         ],
         fact: "Worldwide, flights produced 859 million tonnes of CO2 in 2017.",
-        image:"https://2.bp.blogspot.com/-72m84tv48pQ/WZjEO-F158I/AAAAAAAA7Nk/hIZEvPCpQps790D1PJj84e6uDFMiDJWzgCLcBGAs/s640/IMG-20170729-WA0023.jpg"
+        image:"https://2.bp.blogspot.com/-72m84tv48pQ/WZjEO-F158I/AAAAAAAA7Nk/hIZEvPCpQps790D1PJj84e6uDFMiDJWzgCLcBGAs/s640/IMG-20170729-WA0023.jpg",
+        source:"https://www.atag.org/facts-figures.html"
       },
+
       {
         category: "Diet",
         questions:
@@ -149,7 +151,8 @@ db.questions.insertMany(
           }
         ],
         fact: "Eating a kilo of lamb is equivalent to driving 90 miles!",
-        image:"http://static.becomegorgeous.com/img/arts/2013/9/green-smoothie-weight-loss-diet-plan/embedded_healthy_green_smoothies.jpg"
+        image:"http://static.becomegorgeous.com/img/arts/2013/9/green-smoothie-weight-loss-diet-plan/embedded_healthy_green_smoothies.jpg",
+        source:"http://uk.businessinsider.com/the-top-10-foods-with-the-biggest-environmental-footprint-2015-9"
       },
       {
         category: "Transport",
@@ -183,7 +186,8 @@ db.questions.insertMany(
                 }
               ],
               fact:"It would take 50 new cars to produce the same amount of pollutant emissions as one vehicle built in 1970",
-              image:"http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_720/images/live/p0/29/jk/p029jkj4.jpg"
+              image:"http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_720/images/live/p0/29/jk/p029jkj4.jpg",
+              source:"https://www.theguardian.com/environment/green-living-blog/2010/sep/23/carbon-footprint-new-car"
             },
             {
               category: "Home",
@@ -213,7 +217,8 @@ db.questions.insertMany(
                 }
               ],
               fact:"It takes 50 tonnes of CO2 to build an average UK house.",
-              image:"https://www.edenproject.com/sites/default/files/styles/ep_main_image/public/images/main/malaysian-house.jpg?itok=Q-_IMwXy&c=06f89add14e131ed8a34e9dd1eb22de9"
+              image:"https://www.edenproject.com/sites/default/files/styles/ep_main_image/public/images/main/malaysian-house.jpg?itok=Q-_IMwXy&c=06f89add14e131ed8a34e9dd1eb22de9",
+              source:"https://www.citu.co.uk/citu-live/what-is-the-carbon-footprint-of-a-house/"
 
             }
           ]
