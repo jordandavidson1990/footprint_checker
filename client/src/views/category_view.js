@@ -47,7 +47,7 @@ CategoryView.prototype.render = function (category, categoryIndex, categoryTopic
 
   const doYouKnow = document.createElement('img');
   doYouKnow.src = "http://www.sodgod.com/wp-content/featured-content/lawn-insect/images/do-you.png"
-  doYouKnow.alt = 'Do You Know??';
+  doYouKnow.alt = 'Did You Know??';
   doYouKnow.id = 'doYouKnowImg'
   didYouKnowDiv.appendChild(doYouKnow)
 
@@ -62,6 +62,7 @@ CategoryView.prototype.render = function (category, categoryIndex, categoryTopic
   factSource.src = source
   didYouKnowDiv.appendChild(factSource)
 
+// this.container.appendChild(didYouKnowDiv)
   categoryDiv.appendChild(didYouKnowDiv)
   return categoryDiv;
 

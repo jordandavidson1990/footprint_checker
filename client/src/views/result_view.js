@@ -14,8 +14,8 @@ ResultView.prototype.bindEvents = function () {
   let totalDiv =
   document.createElement('div');
   // debugger;
-
-  // this.container.innerHTML = '';
+// document.querySelector('this.container')
+//   this.container.innerHTML = '';
   totalDiv.id = "totalDiv";
 
   PubSub.subscribe('CarbonFootprints:results-ready', (totalCarbonFootPrints) => {

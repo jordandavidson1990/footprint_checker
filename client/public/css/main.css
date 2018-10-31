@@ -91,6 +91,7 @@ button:hover::after {
   opacity: 0.9;
   border-radius: 90px;
   background-color: inherit;
+  border:1px solid #8AC6D0;
 }
 #fact{
   color:#073B3A;
@@ -98,13 +99,17 @@ button:hover::after {
   background-color: #87be3c;
   border-radius: 30px;
   text-align: center;
-opacity: 0.9;
-text-decoration: none;
-    margin: 20px
+  opacity: 0.8;
+  text-decoration: none;
+  width:60%;
+  height: auto;
+  margin: auto;
+  border:1px solid #8AC6D0;
 
 }
 
 #didYouKnowDiv{
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
 }
@@ -113,22 +118,24 @@ text-decoration: none;
   width: 30%;
   height: 30%;
   opacity: 0.8;
+  /* border:1px solid #8AC6D0; */
+  /* border */
 }
 
 /*
 button#back{
-  content: '\203A';
-  display: inline-block;
-  position:absolute;
-  left: 1rem;
-  transition:left 0.3s ease-in-out;
- } */
- button:hover::before{
-   left:0.7rem;
- }
+content: '\203A';
+display: inline-block;
+position:absolute;
+left: 1rem;
+transition:left 0.3s ease-in-out;
+} */
+button:hover::before{
+  left:0.7rem;
+}
 
 div.footprint-result h3{
-   color:#554971;
+  color:#554971;
 }
 
 .footprint-header{
@@ -146,6 +153,7 @@ div.footprint-result h3{
   margin-bottom: 10px;
   opacity: 0.8;
 }
+
 .title{
   text-align: center;
   background-color: inherit;
@@ -156,6 +164,11 @@ div.footprint-result h3{
   margin-bottom: 20px;
   background-image: url(./images/ocean.jpg);
   opacity: 0.8;
+}
+footer{
+  margin-top: 20px;
+  opacity: 0.8;
+  font-size: 10px;
 }
 
 .container{
@@ -174,8 +187,8 @@ div.footprint-result h3{
 }
 
 /* .resultsChart {
-  height: 400px;
-  width: 100%;
+height: 400px;
+width: 100%;
 } */
 
 input {
@@ -207,12 +220,12 @@ input:checked + label::before {
 }
 #logo{
   /* background-image: url('./images/'); */
- margin-left: auto;
- margin-right: auto;
- width:30px;
- height: 30px;
- opacity: 0.9;
- border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width:30px;
+  height: 30px;
+  opacity: 0.9;
+  border-radius: 50%;
 }
 
 #logo2{
@@ -230,7 +243,7 @@ input:checked + label::before {
   display: flex;
   /* justify-content: center; */
   flex-direction: column-reverse;
-  /* border: 2px solid #8AC6D0; */
+  border: 2px solid #63768D;
   border-radius: 90px;
   width:80%;
   margin:auto;

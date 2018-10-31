@@ -70,8 +70,7 @@ FormWrapperView.prototype.render = function(questionsCollection){
       temporaryCurrentCategory += 1;
       if(temporaryCurrentCategory === questionsCollection.length){
         this.container.appendChild(calculateButton)
-      // debugger
-      // event.detail.removeChild(event.detail.querySelector('button'))
+
     }
   }
   })
