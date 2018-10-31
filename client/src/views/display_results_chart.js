@@ -42,10 +42,13 @@ DisplayResultsChart.prototype.drawTableAndChart = function (inputArray) {
   // {width: '80%', height: '100%'}
 
   let chartOptions = {
-    title: 'CO2 Footprint Results',
+    title: 'Annual CO2 Footprint Results',
     // legend: { position: 'top', maxLines: 2 },
     colors: ['#5C3292', '#1A8763'],
-    interpolateNulls: false
+    interpolateNulls: false,
+    hAxis: {
+              title: 'CO2 footprints in kgs',
+            }
   };
 
   let chart = new google.visualization.BarChart(document.querySelector('#resultsTable'));
