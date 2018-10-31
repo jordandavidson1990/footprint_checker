@@ -43,8 +43,6 @@ QuestionView.prototype.render = function (question, categoryIndex, categoryTopic
     optionDiv.appendChild(questionOptions);
     optionDiv.appendChild(optionLabel);
     questionContainer.appendChild(optionDiv);
-    // questionContainer.appendChild(optionLabel);
-    // questionContainer.appendChild(questionOptions);
   })
   // debugger;
   return questionContainer
