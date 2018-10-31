@@ -32,7 +32,7 @@ debugger;
 CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   let result = 0.0;
   let airTravelFootprints;
-  this.userCarbonFootprints = [['Category', 'Your CO2 Footprints', 'UK Average Person Footprints']];
+  this.userCarbonFootprints = [['Category', 'Your Annual CO2 Footprints', 'UK Average Person Annual Footprints']];
 
   if(Object.keys(userInput["Air Travel"])[0] === "Q1") {
     airTravelFootprints = this.calculateAirTravelFootprint(userInput["Air Travel"]);
