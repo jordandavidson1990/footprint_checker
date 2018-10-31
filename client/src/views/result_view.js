@@ -28,7 +28,7 @@ ResultView.prototype.bindEvents = function () {
       newTotalDiv.id = "totalDiv";
 
       const total = document.createElement('h4');
-      total.textContent = `Total Carbon Dioxide Produced: ${totalCarbonFootPrints.detail}KGs`
+      total.textContent = `Total Carbon Dioxide Produced: ${totalCarbonFootPrints.detail} kgs`
       // newTotalDiv.appendChild(total);
       this.container.appendChild(newTotalDiv)
       this.container.appendChild(total)

@@ -97,7 +97,7 @@ CarbonFootprints.prototype.calculateHomeFootprint = function (userInputHome) {
 
 
 CarbonFootprints.prototype.createChartArray = function (category, footprintsValue) {
-  const ukAverage = {"Air Travel": 5000, "Diet": 4000, "Transport": 6000, "Home": 4000};
+  const ukAverage = {"Air Travel": 1500, "Diet": 3000, "Transport": 2300, "Home": 3500};
 
   this.userCarbonFootprints.push([category, footprintsValue, ukAverage[category]]);
   // debugger;
