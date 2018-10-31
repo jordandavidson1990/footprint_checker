@@ -37,26 +37,26 @@ CarbonFootprints.prototype.calculateFootprint = function (userInput) {
   if(Object.keys(userInput["Air Travel"])[0] === "Q1") {
     airTravelFootprints = this.calculateAirTravelFootprint(userInput["Air Travel"]);
     result += airTravelFootprints;
-    this.createChartArray("Air Travel", result);
+    this.createChartArray("Air Travel", airTravelFootprints);
 
   }
 
   if(Object.keys(userInput["Diet"])[0] === "Q1") {
     DietFootprints = this.calculateDietFootprint(userInput["Diet"]);
     result += DietFootprints;
-    this.createChartArray("Diet", result);
+    this.createChartArray("Diet", DietFootprints);
   }
 
   if(Object.keys(userInput["Transport"])[0] === "Q1") {
     TransportFootprints = this.calculateTransportFootprint(userInput["Transport"]);
     result += TransportFootprints;
-    this.createChartArray("Transport", result);
+    this.createChartArray("Transport", TransportFootprints);
   }
 
   if(Object.keys(userInput["Home"])[0] === "Q1") {
     HomeFootprints = this.calculateHomeFootprint(userInput["Home"]);
     result += HomeFootprints;
-    this.createChartArray("Home", result);
+    this.createChartArray("Home", HomeFootprints);
   }
 
   return result;
