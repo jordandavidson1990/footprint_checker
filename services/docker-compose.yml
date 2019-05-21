@@ -1,0 +1,39 @@
+version: '3.1'
+
+services:
+  footprint_service:
+    container_name: 'footprint_service'
+    ports:
+      - 3000:3000
+    build: ./footprint_service/
+    # networks:
+    #   - nodeapp-network
+    links:
+       - mongoservice
+    restart: on-failure
+
+  mongoservice:
+    image: mongo:latest
+    container_name: "mongoservice"
+    # networks:
+    #   - nodeapp-network
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+     - ./data/db:/data/db
+    ports:
+      - 27017:27017
+    command: mongod --smallfiles
+    restart: on-failure
+
+  mongosetup:
+    image: mongo:latest
+    container_name: "mongosetup"
+    volumes:
+     - ./footprint_service/server/db:/seeds
+     - ./mongosetup:/mongosetup
+    command: sh /mongosetup/setup.sh
+    restart: on-failure
+    links:
+      - mongoservice
