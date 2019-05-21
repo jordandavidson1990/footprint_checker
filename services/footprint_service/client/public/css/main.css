@@ -1,0 +1,257 @@
+html{
+  height: 100%;
+}
+
+body{
+  background-color: #63768D;
+  color: #36213E;
+  font-family: "Palatino Linotype", sans-serif;
+  background-image: url(./images/trees.jpg);
+  margin: 0;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-position: center;
+}
+
+div.footprint-result{
+  width:80%;
+  height:auto;
+  margin:auto;
+  margin-bottom: 5px;
+  /* border: 2px solid #8AC6D0; */
+  border-radius: 20px;
+  background-image:url(./images/ocean.jpg);
+  opacity: 0.9;
+  text-align: center;
+  /* color: inherit; */
+
+}
+
+.forest{
+  opacity:0.9;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #8AC6D0;
+  border-radius: 90px;
+  width:30%;
+  margin:auto;
+}
+
+nav>ul{
+  list-style-type: none;
+  /* margin:0; */
+  padding:8px;
+  /* display: inline; */
+  /* width:60px; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+h2{
+  text-align: center;
+  /* background-color: grey; */
+  border-radius: 700px;
+  background-image: url(./images/ocean.jpg);
+  color:inherit;
+  opacity: 0.7;
+}
+
+p{
+  color: #B8F3FF;
+  /* text-align: center; */
+}
+
+button{
+  position: relative;
+  padding: 0.7rem 1.5rem;
+  border-radius: 3px;
+  border: 0;
+  background-color: #B8F3FF;
+  display: block;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+button::after {
+  /* \ to connect to toptal asci character  */
+  content: '\203A';
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+  transition: right 0.3s ease-in-out;
+}
+
+button:hover::after {
+  right: 0.7rem;
+}
+
+#topicImg{
+  width:40%;
+  margin:auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  opacity: 0.9;
+  border-radius: 90px;
+  background-color: inherit;
+  border:1px solid #8AC6D0;
+}
+#fact{
+  color:#073B3A;
+  font:italic;
+  background-color: #87be3c;
+  border-radius: 30px;
+  text-align: center;
+  opacity: 0.8;
+  text-decoration: none;
+  width:60%;
+  height: auto;
+  margin: auto;
+  border:1px solid #8AC6D0;
+
+}
+
+#didYouKnowDiv{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+#doYouKnowImg {
+  width: 30%;
+  height: 30%;
+  opacity: 0.8;
+  /* border:1px solid #8AC6D0; */
+  /* border */
+}
+
+/*
+button#back{
+content: '\203A';
+display: inline-block;
+position:absolute;
+left: 1rem;
+transition:left 0.3s ease-in-out;
+} */
+button:hover::before{
+  left:0.7rem;
+}
+
+div.footprint-result h3{
+  color:#554971;
+}
+
+.footprint-header{
+  /* background: #8AC6D0; */
+  color:#36213E;
+  font-weight: bold;
+  position: relative;
+  box-shadow: 0 1px 3px 1px #63768D;
+  display: block;
+  text-align: center;
+  /* text-decoration: underline; */
+  width:100%;
+  height:auto;
+  /* border-radius: 5px; */
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.title{
+  text-align: center;
+  background-color: inherit;
+  border: 2px solid #8AC6D0;
+  border-radius: 5px;
+  width: 85%;
+  margin:0 auto;
+  margin-bottom: 20px;
+  background-image: url(./images/ocean.jpg);
+  opacity: 0.8;
+}
+footer{
+  margin-top: 20px;
+  opacity: 0.8;
+  font-size: 10px;
+}
+
+.container{
+  width: 80%;
+  height:auto;
+  margin:0 auto;
+  padding: 10px;
+  border: 2px solid #8AC6D0;
+  border-radius: 5px;
+  background-color: #63768D;
+  opacity: 0.95;
+}
+.ocean{
+  background-image: url(./images/ocean.jpg);
+  /* border-radius: 50px */
+}
+
+/* .resultsChart {
+height: 400px;
+width: 100%;
+} */
+
+input {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+input + label {
+  position: relative;
+  cursor: pointer;
+}
+
+input + label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #36213E;
+  border-radius: 100%;
+  top: 5px;
+  position: relative;
+  margin-right: 20px;
+  margin-left: 40px;
+}
+
+input:checked + label::before {
+  background: #6BBF59;
+}
+#logo{
+  /* background-image: url('./images/'); */
+  margin-left: auto;
+  margin-right: auto;
+  width:30px;
+  height: 30px;
+  opacity: 0.9;
+  border-radius: 50%;
+}
+
+#logo2{
+  margin-left: auto;
+  margin-right: auto;
+  width:30px;
+  height: 30px;
+  opacity: 0.9;
+}
+
+#visualDiv {
+  /* display: flex;
+  flex-direction: row-reverse; */
+  opacity:0.9;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column-reverse;
+  border: 2px solid #63768D;
+  border-radius: 90px;
+  width:80%;
+  margin:auto;
+}
